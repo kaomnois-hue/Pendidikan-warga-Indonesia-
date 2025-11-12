@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jurnal Pendidikan Tinggi</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      background: #002244;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 25px;
+      text-decoration: none;
+      display: block;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #0055aa;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #003366;
+      border-bottom: 2px solid #0055aa;
+      padding-bottom: 5px;
+    }
+
+    .jurnal-list {
+      margin-top: 20px;
+    }
+
+    .jurnal {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .jurnal h3 {
+      margin: 0;
+      color: #0055aa;
+    }
+
+    .jurnal p {
+      margin: 5px 0;
+    }
+
+    .upload-section {
+      margin-top: 40px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #0055aa;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #003366;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #002244;
+      color: #ddd;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PENDIDIKAN SEMUA OTAK TIKTOK</h1>
+    <p>Publikasi Ilmiah untuk Inovasi dan Penelitian Pendidikan Otak Tiktok</p>
+  </header>
+
+  <nav>
+    <a href="#home">Beranda</a>
+    <a href="#jurnal">Daftar Jurnal</a>
+    <a href="#unggah">Unggah Artikel</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <div class="container" id="home">
+    <h2>Selamat Datang di Jurnal Pendidikan Tinggi</h2>
+    <p>
+      Website ini menyediakan wadah bagi para peneliti, dosen, dan mahasiswa
+      untuk mempublikasikan karya ilmiah dalam bidang pendidikan tinggi.
+      Kami berkomitmen terhadap integritas akademik dan inovasi dalam penelitian.
+    </p>
+  </div>
+
+  <div class="container" id="jurnal">
+    <h2>Daftar Jurnal Terbaru</h2>
+    <div class="jurnal-list">
+      <div class="jurnal">
+        <h3>Inovasi Pembelajaran Berbasis Digital di Perguruan Tinggi</h3>
+        <p><strong>Penulis:</strong> Dr. Anisa Rahmawati, M.Pd</p>
+        <p><strong>Abstrak:</strong> Penelitian ini membahas penerapan teknologi digital dalam proses pembelajaran di perguruan tinggi untuk meningkatkan efektivitas belajar mahasiswa...</p>
+      </div>
+
+      <div class="jurnal">
+        <h3>Efektivitas Metode Blended Learning di Masa Pasca Pandemi</h3>
+        <p><strong>Penulis:</strong> Prof. Budi Santoso, Ph.D</p>
+        <p><strong>Abstrak:</strong> Studi ini mengevaluasi efektivitas penerapan metode pembelajaran campuran antara daring dan luring di universitas negeri di Indonesia...</p>
+      </div>
+
+      <div class="jurnal">
+        <h3>Pengaruh Kepemimpinan Akademik terhadap Kinerja Dosen</h3>
+        <p><strong>Penulis:</strong> Dr. Sinta Dewi, M.Ed</p>
+        <p><strong>Abstrak:</strong> Artikel ini mengkaji hubungan antara gaya kepemimpinan akademik dan kinerja dosen di lingkungan pendidikan tinggi swasta...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container upload-section" id="unggah">
+    <h2>Unggah Artikel Ilmiah</h2>
+    <form onsubmit="unggahArtikel(event)">
+      <label>Nama Penulis:</label>
+      <input type="text" id="nama" required>
+
+      <label>Judul Artikel:</label>
+      <input type="text" id="judul" required>
+
+      <label>Abstrak:</label>
+      <textarea id="abstrak" rows="4" required></textarea>
+
+      <label>File Artikel (PDF):</label>
+      <input type="file" id="file" accept=".pdf" required>
+
+      <button type="submit">Kirim Artikel</button>
+    </form>
+  </div>
+
+  <div class="container" id="kontak">
+    <h2>Kontak Kami</h2>
+    <p>📧 Email: ikyysamjb@gmail.com.ac.id</p>
+    <p>🏫 Alamat: Jl. Pendidikan No. 79, Banten, Indonesia</p>
+  </div>
+
+  <footer>
+    © 2025 Jurnal Pendidikan Tinggi | Open Access Academic Journal
+  </footer>
+
+  <script>
+    function unggahArtikel(e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value;
+      const judul = document.getElementById("judul").value;
+      const file = document.getElementById("file").files[0];
+
+      if (!file) {
+        alert("Harap pilih file PDF artikel!");
+        return;
+      }
+
+      alert(`✅ Terima kasih, ${nama}!\nArtikel "${judul}" berhasil diunggah (simulasi).`);
+      document.querySelector("form").reset();
+    }
+  </script>
+
+</body>
+</html>
